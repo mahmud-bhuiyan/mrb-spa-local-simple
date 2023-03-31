@@ -11,6 +11,9 @@ import Contact from "./components/Contact/Contact";
 import Home from "./components/Home/Home";
 import SideCart from "./components/SideCart/SideCart";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   const element = <FontAwesomeIcon icon={faCoffee} />;
 
@@ -43,6 +46,7 @@ function App() {
         </div>
       </div>
       <Contact></Contact>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

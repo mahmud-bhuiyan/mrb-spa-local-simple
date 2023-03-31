@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 const SideCart = ({ countWatchTime }) => {
   const [time, setTime] = useState(countWatchTime);
@@ -16,6 +17,10 @@ const SideCart = ({ countWatchTime }) => {
   const handleBreakTime = (bt) => {
     localStorage.setItem("breakTime", bt);
     setBreakTime(bt);
+  };
+
+  const handleComplete = () => {
+    toast("Wow so easy !");
   };
 
   return (
@@ -42,7 +47,9 @@ const SideCart = ({ countWatchTime }) => {
 
       <input type="text" value={breakTime} disabled />
 
-      <button className="mt-5 btn btn-info w-100">Complete</button>
+      <button onClick={handleComplete} className="mt-5 btn btn-info w-100">
+        Complete
+      </button>
     </div>
   );
 };
